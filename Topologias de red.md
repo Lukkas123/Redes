@@ -20,7 +20,8 @@ Si el dispositivo central falla, toda su red dejará de funcionar.
 El rendimiento y el ancho de banda están limitados por el nodo central
 
 Puede ser costoso de operar
-<img width="49" height="47" alt="image" src="https://github.com/user-attachments/assets/1f700f1c-ef42-4eee-8a3d-ec267f423998" />
+<img width="350" height="339" alt="image" src="https://github.com/user-attachments/assets/684c7ba5-d5f7-48ab-9464-867c6e37e88b" />
+
 
 ## Topologia en Bus
 También llamada topología de red troncal, bus o línea, guía los dispositivos a lo largo de un solo cable que se extiende desde un extremo de la red hasta el otro. Los datos fluirán a lo largo del cable a medida que viaja a su destino.
