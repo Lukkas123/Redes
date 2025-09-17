@@ -1,124 +1,131 @@
-## Topologias de red
+## Topologías de red
+La topología de red describe cómo se organizan los elementos de una red de comunicaciones. La estructura topológica se puede representar física o lógicamente.
 
-## Topologia estrella
-Es el tipo de configuración más común. La red está organizada de modo que los nodos estén conectados a  un dispositivo central (un hub),  que actúa como servidor. El hub gestiona la transmisión de datos a través de la red. Es decir, cualquier dato enviado a través de la red viaja a través del dispositivo central antes de terminar en su destino
+En el caso de la topología lógica, los dispositivos de comunicación se modelan como nodos y las conexiones entre dispositivos se modelan como enlaces o líneas entre nodos.
 
-Ventajas:
+La topología física describe la verdadera apariencia o diseño de la red. Las distancias entre nodos, interconexiones físicas, velocidades de transmisión o tipos de señales pueden diferir entre dos redes, pero sus topologías lógicas pueden ser idénticas.
 
-Gestión conveniente desde una ubicación central
+Al mapear gráficamente estos enlaces, obtenemos algunas formas geométricas que se pueden usar para describir diferentes topologías. Cada tipo tiene ventajas y desventajas, ya que difieren en cómo los dispositivos pueden conectarse entre sí.
 
-Si un nodo falla, la red aún funciona
+---
 
-Los dispositivos se pueden agregar o apartaer sin interrumpir la red
+## Topología Estrella
+Es el tipo de configuración más común. La red está organizada de modo que los nodos estén conectados a un dispositivo central (hub), que actúa como servidor y gestiona la transmisión de datos a través de la red. Cualquier dato enviado viaja a través del dispositivo central antes de llegar a su destino.
 
-Más fácil de identificar y aislar los problemas de rendimiento
+**Ventajas:**
 
-Desventajas:
+- Gestión conveniente desde una ubicación central.
+- Si un nodo falla, la red aún funciona.
+- Los dispositivos se pueden agregar o apartar sin interrumpir la red.
+- Más fácil identificar y aislar problemas de rendimiento.
 
-Si el dispositivo central falla, toda su red dejará de funcionar.
+**Desventajas:**
 
-El rendimiento y el ancho de banda están limitados por el nodo central
+- Si el dispositivo central falla, toda la red dejará de funcionar.
+- El rendimiento y el ancho de banda están limitados por el nodo central.
+- Puede ser costoso de operar.
 
-Puede ser costoso de operar
-<img width="350" height="339" alt="image" src="https://github.com/user-attachments/assets/684c7ba5-d5f7-48ab-9464-867c6e37e88b" />
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/684c7ba5-d5f7-48ab-9464-867c6e37e88b" width="350" height="339">
+</div>
 
+---
 
-## Topologia en Bus
-También llamada topología de red troncal, bus o línea, guía los dispositivos a lo largo de un solo cable que se extiende desde un extremo de la red hasta el otro. Los datos fluirán a lo largo del cable a medida que viaja a su destino.
+## Topología en Bus
+También llamada topología troncal o línea, guía los dispositivos a lo largo de un solo cable que se extiende desde un extremo de la red hasta el otro. Los datos fluyen a lo largo del cable hasta su destino.
 
-Ventajas:
+**Ventajas:**
 
-Económico para redes más pequeñas
+- Económica para redes pequeñas.
+- Diseño simple; todos los dispositivos conectados a través de un cable.
+- Se pueden agregar más nodos alargando la línea.
 
-Diseño simple; todos los dispositivos conectados a través de un cable
+**Desventajas:**
 
-Se pueden agregar más nodos alargando la línea
+- La red es vulnerable a fallas de cables.
+- Cada nodo agregado disminuye la velocidad de transmisión.
+- Los datos solo se pueden enviar en una dirección a la vez.
 
-Desventajas:
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/e2d6bcd4-da7a-4e9a-a95b-f7f97020e090" width="350" height="339">
+</div>
 
-La red es vulnerable a fallas de cables.
-
-Cada nodo agregado disminuye la velocidad de transmisión
-
-Los datos solo se pueden enviar en una dirección a la vez.
-<img width="949" height="918" alt="image" src="https://github.com/user-attachments/assets/cf632043-8c7e-4e5e-83f1-e0d9477be518" />
+---
 
 ## Topología en Anillo
+Los nodos se configuran en un patrón circular. Los datos viajan a través de cada dispositivo a medida que circulan por el anillo. En redes grandes, pueden ser necesarios repetidores para evitar la pérdida de paquetes durante la transmisión. Se pueden configurar como anillo único (half-dúplex) o anillo doble (full-dúplex) para permitir tráfico en ambas direcciones simultáneamente.
 
-Los nodos se configuran en un patrón circular. Los datos viajan a través de cada dispositivo a medida que viajan a través del anillo. En una red grande, es posible que se necesiten repetidores para evitar la pérdida de paquetes durante la transmisión. Las topologías de anillo se pueden configurar como anillo único (half-dúplex) o anillo doble (full-dúplex) para permitir que el tráfico fluya en ambas direcciones simultáneamente.
+**Ventajas:**
 
-Ventajas:
+- Costo-beneficio adecuado.
+- Barato de instalar.
+- Problemas de rendimiento fáciles de identificar.
 
-Costo beneficio
+**Desventajas:**
 
-Barato de instalar
+- Si un nodo falla, puede afectar varios nodos.
+- Todos los dispositivos comparten ancho de banda, limitando el rendimiento.
+- Agregar o eliminar nodos requiere tiempo de inactividad.
 
-Problemas de rendimiento fáciles de identificar
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/610980a8-f27f-446c-8105-99b620482bf7" width="350" height="325">
+</div>
 
-Desventajas:
+---
 
-Si un nudo cae, puede caer varios nudos con él.
+## Topología en Árbol
+Un nodo central conecta hubs secundarios, que a su vez pueden conectar otros nodos en una relación de padre-hijo. El nodo central funciona como el tronco del árbol y las ramas son los concentradores secundarios, conectando los dispositivos finales.
 
-Todos los dispositivos comparten ancho de banda, lo que puede limitar el rendimiento de trasferencias. 
+**Ventajas:**
 
-Agregar o eliminar nodos significa tiempo de inactividad para toda la red
-<img width="350" height="325" alt="image" src="https://github.com/user-attachments/assets/610980a8-f27f-446c-8105-99b620482bf7" />
+- Extremadamente flexible y escalable.
+- Facilita la identificación de errores, ya que cada rama de la red puede diagnosticarse individualmente.
 
-## Topologia en Arbol
-Un nodo central conecta los hub secundarios. Estos hubs tienen una relación de padres-hijos con los dispositivos. O eixo central é como o tronco da árvore.El eje central es como el tronco del árbol. Donde las ramas se conectan son los concentradores secundarios o los nodos de control y luego los dispositivos conectados se conectan a los branches.
+**Desventajas:**
 
-Ventajas:
+- Si falla un hub central, los nodos conectados a él se desconectarán (aunque otras ramas pueden seguir funcionando de forma independiente).
+- La estructura puede ser difícil de gestionar de forma eficaz.
+- Utiliza más cableado que otros métodos.
 
-Extremadamente flexible y escalable
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/000b430a-01a5-4fc4-ae4d-2f709511353a" width="350" height="350">
+</div>
 
-Facilidad para identificar errores, ya que cada branch de la red puede diagnosticarse individualmente.
-
-Desventajas:
-
-Si falla un hub central, los nodos se desconectarán (aunque las ramas pueden seguir funcionando de forma independiente)
-
-La estructura puede ser difícil de gestionar de forma eficaz
-
-Utiliza mucho más cableado que otros métodos
-<img width="350" height="350" alt="image" src="https://github.com/user-attachments/assets/000b430a-01a5-4fc4-ae4d-2f709511353a" />
+---
 
 ## Topología de Malla
+Los nodos están interconectados. En full-mesh, todos los dispositivos se conectan directamente; en malla parcial, la mayoría se conecta directamente. Esto proporciona múltiples rutas para la entrega de datos.
 
-Los nodos están interconectados. Los modos full-mesh  conectan todos los dispositivos en la red directamente. En una topología de malla parcial, la mayoría de los dispositivos se conectan directamente. Esto proporciona múltiples rutas para la entrega de datos. Los datos se envían a la distancia más corta disponible para la transmisión.
+**Ventajas:**
 
-Ventajas:
+- Confiable y estable.
+- Ningún fallo de un solo nodo desconecta la red.
 
-confiable y estable
+**Desventajas:**
 
-Ningún fallo de un solo nodo desconecta la red
+- Complejidad alta de interconexión entre nodos.
+- Mano de obra intensiva para instalar.
+- Requiere mucho cableado para conectar todos los dispositivos.
 
-Desventajas:
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/e5572e1f-cbdc-4b3b-aa29-33f7ee527e8c" width="350" height="322">
+</div>
 
-Grado complejo de interconectividad entre nodos.
-
-Mano de obra intensiva para instalar
-
-Utiliza mucho cableado para conectar todos los dispositivos.
-<img width="350" height="322" alt="image" src="https://github.com/user-attachments/assets/e5572e1f-cbdc-4b3b-aa29-33f7ee527e8c" />
-
+---
 
 ## Topología Híbrida
+Utiliza varias estructuras de topología. Es común en organizaciones grandes donde cada departamento puede tener un tipo de topología diferente, con hubs departamentales conectados a un hub central.
 
-Utiliza varias estructuras de topología. Esto es más común en organizaciones grandes donde cada departamento puede tener un tipo de topología, como estrella o línea, con el hub del departamento conectando a um hub central.
+**Ventajas:**
 
-Ventajas:
+- Flexible y adaptable a diferentes necesidades.
+- Permite personalización según la estructura de la organización.
 
-Flexibilidad
+**Desventajas:**
 
-Puede personalizarse según las necesidades del cliente.
-
-Desventajas:
-
-La complejidad aumenta
-
-Se requiere experiencia en múltiples topologías
-
-Puede ser más difícil determinar los problemas de rendimiento.
+- La complejidad aumenta.
+- Se requiere experiencia en múltiples topologías.
+- Puede ser más difícil determinar problemas de rendimiento.
 
 
 
