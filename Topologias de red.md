@@ -9,21 +9,15 @@ Al mapear gráficamente estos enlaces, obtenemos algunas formas geométricas que
 
 ---
 
+## Topologia punto a punto
+Una red punto a punto, o una topología de puntos, es la red más fácil de entender y el tipo más básico de topología de red. Son simplemente dos nodos que están conectados por un solo enlace. Los datos viajan de un lado a otro entre estos dos endpoints. Aunque este es el tipo de red más fácil de configurar, su simplicidad es su propio inconveniente. Una topología punto a punto no es aplicable para la mayoría de los casos de uso modernos.
+
+---
+
 ## Topología Estrella
-Es el tipo de configuración más común. La red está organizada de modo que los nodos estén conectados a un dispositivo central (hub), que actúa como servidor y gestiona la transmisión de datos a través de la red. Cualquier dato enviado viaja a través del dispositivo central antes de llegar a su destino.
+En una red en estrella, todos los nodos están conectados a un concentrador central. Los nodos se colocan alrededor de ese eje central en una forma que se asemeja aproximadamente a una estrella.
 
-**Ventajas:**
-
-- Gestión conveniente desde una ubicación central.
-- Si un nodo falla, la red aún funciona.
-- Los dispositivos se pueden agregar o apartar sin interrumpir la red.
-- Más fácil identificar y aislar problemas de rendimiento.
-
-**Desventajas:**
-
-- Si el dispositivo central falla, toda la red dejará de funcionar.
-- El rendimiento y el ancho de banda están limitados por el nodo central.
-- Puede ser costoso de operar.
+Este tipo de topología facilita la resolución de problemas con un nodo en particular. Si falla un solo nodo, el resto de la red no se ve afectada. Dicho esto, si el concentrador central se cae, toda la red se cae con él. En una red en estrella, el rendimiento de toda la red depende del concentrador central y de las conexiones a él.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/684c7ba5-d5f7-48ab-9464-867c6e37e88b" width="350" height="339">
@@ -32,20 +26,9 @@ Es el tipo de configuración más común. La red está organizada de modo que lo
 ---
 
 ## Topología en Bus
-También llamada topología troncal o línea, guía los dispositivos a lo largo de un solo cable que se extiende desde un extremo de la red hasta el otro. Los datos fluyen a lo largo del cable hasta su destino.
+Toda la transmisión de datos fluye a través de una única conexión central. Como todo está conectado en línea recta desde un cable central, es una topología rentable y fácil de configurar y añadir nuevos nodos.
 
-**Ventajas:**
-
-- Económica para redes pequeñas.
-- Diseño simple; todos los dispositivos conectados a través de un cable.
-- Se pueden agregar más nodos alargando la línea.
-
-**Desventajas:**
-
-- La red es vulnerable a fallas de cables.
-- Cada nodo agregado disminuye la velocidad de transmisión.
-- Los datos solo se pueden enviar en una dirección a la vez.
-
+Sin embargo, un enlace central compartido tiene inconvenientes. En un sistema que tiene un enlace central con muchas dependencias, un fallo de ese enlace central hace que todas las dependencias fallen. Las redes de bus tampoco son tan seguras como otros tipos debido a este enlace central compartido. Además, cuantos más nodos comparten un cable central, más lenta es una red.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e2d6bcd4-da7a-4e9a-a95b-f7f97020e090" width="350" height="339">
 </div>
@@ -53,20 +36,11 @@ También llamada topología troncal o línea, guía los dispositivos a lo largo 
 ---
 
 ## Topología en Anillo
-Los nodos se configuran en un patrón circular. Los datos viajan a través de cada dispositivo a medida que circulan por el anillo. En redes grandes, pueden ser necesarios repetidores para evitar la pérdida de paquetes durante la transmisión. Se pueden configurar como anillo único (half-dúplex) o anillo doble (full-dúplex) para permitir tráfico en ambas direcciones simultáneamente.
+En una red en anillo, los nodos y enlaces se organizan en un anillo. Cada nodo tiene exactamente dos vecinos. En una red de este tipo, los repetidores se utilizan para garantizar que los datos puedan llegar a los nodos que están más alejados entre sí en el anillo. Los datos suelen fluir unidireccionalmente en una red en anillo.
 
-**Ventajas:**
+La instalación y ampliación de este tipo de redes es barata, y los datos fluyen rápidamente dentro de la red. Pero el fallo de un solo nodo puede hacer caer toda la red. Las redes de doble anillo se utilizan para protegerse contra este tipo de fallos.
 
-- Costo-beneficio adecuado.
-- Barato de instalar.
-- Problemas de rendimiento fáciles de identificar.
-
-**Desventajas:**
-
-- Si un nodo falla, puede afectar varios nodos.
-- Todos los dispositivos comparten ancho de banda, limitando el rendimiento.
-- Agregar o eliminar nodos requiere tiempo de inactividad.
-
+Una red de doble anillo presenta dos anillos concéntricos en lugar de uno, y los anillos envían datos en direcciones opuestas. El segundo anillo se utiliza cuando se produce un fallo en el primero y este tipo de red se utiliza a menudo para dar soporte a infraestructuras cruciales.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/610980a8-f27f-446c-8105-99b620482bf7" width="350" height="325">
 </div>
@@ -74,19 +48,9 @@ Los nodos se configuran en un patrón circular. Los datos viajan a través de ca
 ---
 
 ## Topología en Árbol
-Un nodo central conecta hubs secundarios, que a su vez pueden conectar otros nodos en una relación de padre-hijo. El nodo central funciona como el tronco del árbol y las ramas son los concentradores secundarios, conectando los dispositivos finales.
+Es útil pensar en una topología de árbol como una combinación de una red de bus y una red en estrella. En una topología de árbol, sigue habiendo un concentrador central que lo conecta todo, pero en lugar de nodos individuales que se ramifican desde ese nodo raíz central, se trata de otras redes en estrella. Esta topología permite que más dispositivos se conecten a un centro de datos central, lo que acelera el flujo de datos. Al igual que en una red en estrella, identificar problemas con nodos individuales es relativamente fácil.
 
-**Ventajas:**
-
-- Extremadamente flexible y escalable.
-- Facilita la identificación de errores, ya que cada rama de la red puede diagnosticarse individualmente.
-
-**Desventajas:**
-
-- Si falla un hub central, los nodos conectados a él se desconectarán (aunque otras ramas pueden seguir funcionando de forma independiente).
-- La estructura puede ser difícil de gestionar de forma eficaz.
-- Utiliza más cableado que otros métodos.
-
+Las topologías en árbol tienen los mismos inconvenientes que las redes en bus y en estrella, a saber, la vulnerabilidad a un único punto de fallo. Si esa conexión central se cae, todo se cae.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/000b430a-01a5-4fc4-ae4d-2f709511353a" width="350" height="350">
 </div>
@@ -94,19 +58,11 @@ Un nodo central conecta hubs secundarios, que a su vez pueden conectar otros nod
 ---
 
 ## Topología de Malla
-Los nodos están interconectados. En full-mesh, todos los dispositivos se conectan directamente; en malla parcial, la mayoría se conecta directamente. Esto proporciona múltiples rutas para la entrega de datos.
+En una red de malla, cada dispositivo está conectado al menos a otro nodo de la red. En una red de malla completa, cada nodo está conectado a todos los demás nodos. En una red de malla parcial, sólo algunos de los nodos se conectan directamente entre sí, mientras que otros tienen que pasar por nodos adicionales para llegar al nodo objetivo.
 
-**Ventajas:**
+Dado que los nodos pueden comunicarse directamente entre sí, en lugar de a través de un concentrador central, la comunicación en una red de malla suele ser muy rápida. Un gran ejemplo de red mallada es la propia Internet, donde cada ordenador es un nodo de una red proporcionada por distintos proveedores de servicios de Internet que también se conectan entre sí.
 
-- Confiable y estable.
-- Ningún fallo de un solo nodo desconecta la red.
-
-**Desventajas:**
-
-- Complejidad alta de interconexión entre nodos.
-- Mano de obra intensiva para instalar.
-- Requiere mucho cableado para conectar todos los dispositivos.
-
+Dado que las redes en malla tienen múltiples rutas por las que puede viajar la información, son más resilientes que muchas otras topologías y pueden seguir funcionando si falla un nodo o una conexión. Las redes en malla también ofrecen mayor seguridad: si un nodo es atacado o comprometido, puede ser reemplazado.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e5572e1f-cbdc-4b3b-aa29-33f7ee527e8c" width="350" height="322">
 </div>
@@ -114,18 +70,9 @@ Los nodos están interconectados. En full-mesh, todos los dispositivos se conect
 ---
 
 ## Topología Híbrida
-Utiliza varias estructuras de topología. Es común en organizaciones grandes donde cada departamento puede tener un tipo de topología diferente, con hubs departamentales conectados a un hub central.
+Una topología de red híbrida es cualquier tipo de red que utilice una combinación de topologías. Una red en árbol que combina una red en estrella y una red en bus es un tipo de topología híbrida.
 
-**Ventajas:**
-
-- Flexible y adaptable a diferentes necesidades.
-- Permite personalización según la estructura de la organización.
-
-**Desventajas:**
-
-- La complejidad aumenta.
-- Se requiere experiencia en múltiples topologías.
-- Puede ser más difícil determinar problemas de rendimiento.
+Las redes híbridas ofrecen flexibilidad y ayudan a las organizaciones a diseñar una topología que satisfaga específicamente sus necesidades. Sin embargo, crear una arquitectura de red personalizada puede resultar complicado y requerir más cableado y dispositivos de red, lo que eleva los costes de mantenimiento.
 
 
 
